@@ -19,14 +19,14 @@ class VaccinationController extends Controller
     }
      public function create(Request $request)
     {
-                // 以下を追記
+    
         // Validationを行う
-        $this->validate($request, News::$rules);
+        $this->validate($request, Vaccination::$rules);
 
         $vaccination = new Vaccination;
         $form = $request->all();
 
-        // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
+        // フォームから画像が送信されてきたら、保存して、$vaccination->image_path に画像のパスを保存する
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $vaccination->image_path = basename($path);
@@ -43,7 +43,7 @@ class VaccinationController extends Controller
         $vaccination->fill($form);
         $vaccination->save();
 
-        // admin/news/createにリダイレクトする
+        // admin/vaccination/createにリダイレクトする
         return redirect('admin/vaccination/create');
     }
     
@@ -54,7 +54,7 @@ class VaccinationController extends Controller
             // 検索されたら検索結果を取得する
             $posts = vaccination::where('title', $cond_title)->get();
         } else {
-            // それ以外はすべてのニュースを取得する
+            // それ以外はすべての履歴を取得する
             $posts = Vaccination::all();
         }
         return view('admin.vaccination.index', ['posts' => $posts, 'cond_title' => $cond_title]);
@@ -64,7 +64,7 @@ class VaccinationController extends Controller
 
     public function edit(Request $request)
     {
-        // News Modelからデータを取得する
+        // vaccination Modelからデータを取得する
         $vaccination = Vaccination::find($request->id);
         if (empty($vaccination)) {
             abort(404);
@@ -75,8 +75,8 @@ class VaccinationController extends Controller
     public function update(Request $request)
     {
         // Validationをかける
-        $this->validate($request, News::$rules);
-        // News Modelからデータを取得する
+        $this->validate($request, Vaccination::$rules);
+        // vaccination Modelからデータを取得する
         $vaccination = Vaccination::find($request->id);
         // 送信されてきたフォームデータを格納する
         $vaccination_form = $request->all();

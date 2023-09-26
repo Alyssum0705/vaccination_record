@@ -6,6 +6,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Illuminate\Support\Facades\Gate;
 
 use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -27,13 +28,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
-        
-        VerifyEmail::toMailUsing(function ($notifiable, $url) {
-            return (new MailMessage())
-                ->subject('メールアドレスの確認')
-                ->action('確認', $url)
-                ->view('auth.verify');
-        });
+        // 送信されるメール本文をオリジナルにしたい場合は下記を追記
+        // VerifyEmail::toMailUsing(function ($notifiable, $url) {
+        //     return (new MailMessage)
+        //         ->subject('メールアドレスの確認')
+        //         ->action('確認', $url)
+        //         ->view('emails.verify-email');
+        // });
     }
 }
