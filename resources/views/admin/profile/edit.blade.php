@@ -28,18 +28,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">趣味</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="hobby" value="{{ $profile_form->hobby }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">自己紹介欄</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="20">{{ $profile_form->introduction }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $profile_form->id }}">
                             @csrf

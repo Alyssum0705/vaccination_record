@@ -8,21 +8,25 @@
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
                 <div class="card-body">
-                    @if (session('resent'))
+                    @if (session('status') === 'verification-link-sent')
                         <div class="alert alert-success" role="alert">
                             {{ __('A fresh verification link has been sent to your email address.') }}
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    メールに記載されているリンクをクリックして、登録手続きを完了させてください。<br>
+                    もし確認メールを受信していない場合は
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">こちら</button>
                     </form>
+                    をクリックして再度認証メールを送信してください。
                 </div>
             </div>
         </div>
+    </div>
+    <div class="text-center">
+       <a href="/">TOPに戻る</a>
     </div>
 </div>
 @endsection

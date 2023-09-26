@@ -13,7 +13,7 @@
             <p>
                 確認メールを送信してください！！
             </p>
-            <form method="post" action="{{ route('verification.send') }}">
+            <form method="post" action="{{ route('verification.resend') }}">
                 @method('post')
                 @csrf
                 <div>

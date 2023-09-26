@@ -33,18 +33,6 @@
                             <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">趣味</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">自己紹介欄</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
-                        </div>
-                    </div>
                     @csrf
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>
