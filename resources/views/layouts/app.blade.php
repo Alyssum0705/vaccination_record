@@ -61,6 +61,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('admin.profile.add') }}">
+                                        プロフィール
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('admin.vaccination.add') }}">
+                                        ワクチン接種履歴作成
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
