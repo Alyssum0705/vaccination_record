@@ -69,6 +69,9 @@
                                     <a class="dropdown-item" href="{{ route('admin.vaccination.add') }}">
                                         ワクチン接種履歴作成
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('admin.vaccination.index') }}">
+                                        履歴一覧
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

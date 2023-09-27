@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Vaccination Record') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -66,6 +66,9 @@
                                     </a>
                                     <a class="dropdown-item" href="{{ route('admin.vaccination.add') }}">
                                         ワクチン接種履歴作成
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('admin.vaccination.index') }}">
+                                        履歴一覧
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

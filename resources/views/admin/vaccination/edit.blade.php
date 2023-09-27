@@ -15,7 +15,7 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">ワクチンの種類</label>
+                        <label class="col-md-2" for="vaccine">ワクチンの種類</label>
                         <div class="col-md-10">
                             <input type="search" class="form-control" list="list" name="vaccine" value="{{ $vaccination_form->vaccine }}">
                             <datalist id="list">
@@ -38,31 +38,31 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">接種日</label>
+                        <label class="col-md-2" for="date">接種日</label>
                         <div class="col-md-10">
                             <input type="date" class="form-control" name="date" value="{{ $vaccination_form->date }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">製品名</label>
+                        <label class="col-md-2" for="product">製品名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="product" value="{{ $vaccination_form->product }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">ロット番号</label>
+                        <label class="col-md-2" for="lot">ロット番号</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="lot" value="{{ $vaccination_form->lot }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">クリニック</label>
+                        <label class="col-md-2" for="clinic">クリニック</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="clinic" value="{{ $vaccination_form->clinic }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">医師</label>
+                        <label class="col-md-2" for="doctor">医師</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="doctor" value="{{ $vaccination_form->doctor }}">
                         </div>
