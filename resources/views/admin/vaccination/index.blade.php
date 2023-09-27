@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <form action="{{ route('admin.vaccination.index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">タイトル</label>
+                        <label class="col-md-2">ワクチン名</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
@@ -32,8 +32,8 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">タイトル</th>
-                                <th width="50%">本文</th>
+                                <th width="50%">ワクチン</th>
+                                <th width="20%">接種日</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -41,8 +41,8 @@
                             @foreach($posts as $vaccination)
                                 <tr>
                                     <th>{{ $vaccination->id }}</th>
-                                    <td>{{ Str::limit($vaccination->title, 100) }}</td>
-                                    <td>{{ Str::limit($vaccination->body, 250) }}</td>
+                                    <td>{{ Str::limit($vaccination->vaccine, 100) }}</td>
+                                    <td>{{ Str::limit($vaccination->date, 50) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.vaccination.edit', ['id' => $vaccination->id]) }}">編集</a>

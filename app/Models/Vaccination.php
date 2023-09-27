@@ -12,8 +12,12 @@ class Vaccination extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'title' => 'required',
-        'body' => 'required',
+        'vaccine' => 'required',
+        'date' => 'required',
+        'product' => 'required',
+        'lot' => 'required',
+        'clinic' => 'required',
+        'doctor' => 'required',
     );
     
     // News Modelに関連付けを行う

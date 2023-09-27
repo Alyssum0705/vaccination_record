@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vaccination', function (Blueprint $table) {
+        Schema::create('vaccinations', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); // ニュースのタイトルを保存するカラム
-            $table->string('body');  // ニュースの本文を保存するカラム
+            $table->string('vaccine'); // ワクチン名　カラム
+            $table->string('date');  // 接種日　カラム
+            $table->string('product');  // 製品名　カラム
+            $table->string('lot');  // ロット番号　カラム
+            $table->string('clinic');  // クリニック　カラム
+            $table->string('doctor');  // 医師　カラム
             $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vaccination');
+        Schema::dropIfExists('vaccinations');
     }
 };

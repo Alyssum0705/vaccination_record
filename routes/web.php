@@ -35,8 +35,8 @@ Route::controller(EmailVerificationController::class)
             ->middleware(['signed', 'throttle:6,1'])->name('verify');
     });
     
-use App\Http\Controllers\Admin\NewsController;
-Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middleware(['web', 'verified', 'auth'])->group(function () {
+use App\Http\Controllers\Admin\VaccinationController;
+Route::controller(VaccinationController::class)->prefix('admin')->name('admin.')->middleware(['web', 'verified', 'auth'])->group(function () {
     Route::get('vaccination/create', 'add')->name('vaccination.add');
     Route::post('vaccination/create', 'create')->name('vaccination.create');
     Route::get('vaccination', 'index')->name('vaccination.index');

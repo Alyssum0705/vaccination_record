@@ -15,15 +15,56 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">タイトル</label>
+                        <label class="col-md-2" for="title">ワクチンの種類</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ $vaccination_form->title }}">
+                            <input type="search" class="form-control" list="list" name="vaccine" value="{{ $vaccination_form->vaccine }}">
+                            <datalist id="list">
+                                <option value="A型肝炎">
+                                <option value="B型肝炎">
+                                <option value="破傷風/ジフテリア/百日咳">
+                                <option value="腸チフス">
+                                <option value="髄膜炎">
+                                <option value="狂犬病">
+                                <option value="コレラ">
+                                <option value="日本脳炎">
+                                <option value="ポリオ">
+                                <option value="麻疹/風疹/おたふく">
+                                <option value="水痘">
+                                <option value="ダニ脳炎">
+                                <option value="新型コロナウィルス">
+                                <option value="インフルエンザ">
+                                <option value="黄熱病">
+                            </datalist>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">本文</label>
+                        <label class="col-md-2" for="body">接種日</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ $vaccination_form->body }}</textarea>
+                            <input type="date" class="form-control" name="date" value="{{ $vaccination_form->date }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">製品名</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="product" value="{{ $vaccination_form->product }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">ロット番号</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="lot" value="{{ $vaccination_form->lot }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">クリニック</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="clinic" value="{{ $vaccination_form->clinic }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="body">医師</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="doctor" value="{{ $vaccination_form->doctor }}">
                         </div>
                     </div>
                     <div class="form-group row">

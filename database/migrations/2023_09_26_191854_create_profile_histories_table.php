@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('profile_histories', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('profile_id');
+            $table->string('edited_at');
             $table->timestamps();
         });
     }

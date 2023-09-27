@@ -52,7 +52,7 @@ class VaccinationController extends Controller
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             // 検索されたら検索結果を取得する
-            $posts = vaccination::where('title', $cond_title)->get();
+            $posts = vaccination::where('vaccine', $cond_title)->get();
         } else {
             // それ以外はすべての履歴を取得する
             $posts = Vaccination::all();
